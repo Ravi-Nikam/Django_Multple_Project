@@ -1,0 +1,21 @@
+{% extends 'regis/base.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container">
+    <H3> Enter your registration details here! </H3>
+<form action="" method='POST'>
+    {% csrf_token %}
+    <div class="mb-3" style="padding:1%">
+        <label for="Inputfirstname" class="form-label">User Name</label>
+        <input  name="fname" type="text" class="form-control" id="Inputfirstname" aria-describedby="firstname" required>
+        <div id="firstnameHelp" class="form-text">Enter user Name</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input name="password" type="password" class="form-control" id="exampleInputPassword1" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+  {% endblock %}

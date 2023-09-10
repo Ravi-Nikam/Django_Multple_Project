@@ -1,0 +1,36 @@
+{% extends 'regis/base.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container">
+    <H3> Enter your registration details here! </H3>
+<form  method='POST'>
+    {% csrf_token %}
+    <div class="mb-3" style="padding:1%">
+        <label for="Inputfirstname" class="form-label">First Name</label>
+        <input  name="fname" type="text" class="form-control" id="Inputfirstname" aria-describedby="firstname">
+        <div id="firstnameHelp" class="form-text">Enter First Name</div>
+      </div>
+    <div class="mb-3">
+        <label for="Inputlastname" class="form-label">Last Name address</label>
+        <input name="lname" type="text" class="form-control" id="Inputlastname" aria-describedby="lastname">
+        <div id="lastnameHelp" class="form-text">We'll never share your last name with anyone else.</div>
+      </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <input name="on" type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="{% url 'login' %}" class="btn btn-primary">Sign In</a>
+  </form>
+</div>
+  {% endblock %}

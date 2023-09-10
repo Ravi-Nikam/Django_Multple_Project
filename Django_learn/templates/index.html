@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Utils</title>
+</head>
+<body>
+<h1>Welcome to the text analyzer. Enter your text below</h1>
+<form action='/analyze' method='post'>
+    {% csrf_token %} 
+    <!-- help ful csrf if i make a website which is delete the facebook account 1 ) user login to myapp using fb then i take there username 3) i put a button which is delete facebook account if someone click on it bcz fb use get url for deleting user account
+    so csrf help us that authanticate that this request comes from our website not anyone else
+    and name also cross platform give hint -->
+    <!-- CSRF token is used for security purpose so that nobody can use your website link in his website. let you have make a url of delete account in your website so that url cannot be executed using other website. that's way CSRF is used -->
+    <textarea name='text' style='margin: 0px; width: 721px; height: 93px;'></textarea><br>
+
+    <input type="checkbox" name="removepunc"> Remove Punctuations<br>
+    <input type="checkbox" name="fullcaps"> UPPERCASE<br>
+    <input type="checkbox" name="newlineremover"> New Line Remover<br>
+    <input type="checkbox" name="extraspaceremover"> Extra Spaces Remover<br>
+    <input type="checkbox" name="totallength"> Count number of Char<br>
+    <button type='submit'> Analyze Text</button>
+
+</form>
+</body>
+</html>
